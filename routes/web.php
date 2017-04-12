@@ -13,3 +13,5 @@
 
 Route::get('/', 'ProductsController@index');
 Route::get('/adminpage','AdminController@index');
+Route::get('/adminpage/{product}','AdminController@edit');
+Route::post('/adminpage/{product}','AdminController@store');

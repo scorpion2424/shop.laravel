@@ -5,18 +5,18 @@
         <th>Name</th>
         <th>Description</th>
         <th>Price</th>
-        <th>Buy</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
         @foreach($products as $product)
             <tr>
-                <td>   <img src="img/{{$product->Image}}.jpg" /> </td>
+                <td>   <img src="/img/{{$product->Image}}.jpg" /> </td>
                 <td>   {{$product->Name}} </td>
                 <td>   {{$product->Description}} </td>
                 <td>   {{$product->Price}} </td>
                 <td>
-                    <button type="button" class="btn btn-info">Buy</button>
+                    <a href="/adminpage/{{$product->id}}">Edit</a>
                 </td>
             </tr>
         @endforeach
