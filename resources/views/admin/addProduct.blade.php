@@ -4,6 +4,7 @@
 
 {!! Form::open(
     array(
+        'route' => 'addProduct',
         'class' => 'form',
         'novalidate' => 'novalidate',
         'files' => true)) !!}
@@ -31,7 +32,7 @@
             <td>
 
                 <div class="form-group">
-                    {!! Form::text('productName', null, array('placeholder'=>'')) !!}
+                    {!! Form::text('productName') !!}
                 </div>
 
             </td>
@@ -39,7 +40,7 @@
             <td>
 
                 <div class="form-group">
-                    {!! Form::text('productDescription', null, array('placeholder'=>'')) !!}
+                    {!! Form::text('productDescription') !!}
                 </div>
 
 
@@ -48,7 +49,7 @@
             <td>
 
                 <div class="form-group">
-                    {!! Form::text('productPrice', null, array('placeholder'=>'')) !!}
+                    {!! Form::text('productPrice') !!}
                 </div>
 
 

@@ -12,7 +12,7 @@
     <tbody>
         @foreach($products as $product)
             <tr>
-                <td>   <img src="/img/{{$product->Image}}.jpg" /> </td>
+                <td>    <img src="/storage/app/img/product.jpeg" /> </td>
                 <td>   {{$product->Name}} </td>
                 <td>   {{$product->Description}} </td>
                 <td>   {{$product->Price}} </td>
