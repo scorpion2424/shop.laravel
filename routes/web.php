@@ -16,3 +16,4 @@ Route::get('/adminpage/addproduct','AdminController@add');
 Route::post('/adminpage/addproduct','AdminController@insert');
 Route::get('/adminpage/{product}','AdminController@edit');
 Route::post('/adminpage/{product}','AdminController@update');
+Route::get('/adminpage/deleteproduct/{product}','AdminController@delete');

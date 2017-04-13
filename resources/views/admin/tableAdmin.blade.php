@@ -6,6 +6,7 @@
         <th>Description</th>
         <th>Price</th>
         <th></th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -17,6 +18,9 @@
                 <td>   {{$product->Price}} </td>
                 <td>
                     <a href="/adminpage/{{$product->id}}">Edit</a>
+                </td>
+                <td>
+                    <a href="/adminpage/deleteproduct/{{$product->id}}">Delete</a>
                 </td>
             </tr>
         @endforeach

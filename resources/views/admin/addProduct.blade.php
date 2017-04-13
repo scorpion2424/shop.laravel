@@ -1,6 +1,13 @@
 @include('layouts.master')
 @include('layouts.nav')
 
+
+{!! Form::open(
+    array(
+        'class' => 'form',
+        'novalidate' => 'novalidate',
+        'files' => true)) !!}
+
 <table class="table">
     <thead class="thead-default">
     <tr>
@@ -13,40 +20,52 @@
     </thead>
     <tbody>
     <tr>
-        <form method="POST" action="/adminpage/addproduct">
 
-            {{csrf_field()}}
 
-            <td> </td>
+            <td>
+                <div class="form-group">
+                    {!! Form::file('image', null) !!}
+                </div>
+            </td>
 
             <td>
 
-                <input type="text" name="productName"  required/>
+                <div class="form-group">
+                    {!! Form::text('productName', null, array('placeholder'=>'')) !!}
+                </div>
 
             </td>
 
             <td>
 
-                <input type="text" name="productDescription" required/>
+                <div class="form-group">
+                    {!! Form::text('productDescription', null, array('placeholder'=>'')) !!}
+                </div>
 
 
             </td>
 
             <td>
 
-                <input type="text" name="productPrice"  required/>
+                <div class="form-group">
+                    {!! Form::text('productPrice', null, array('placeholder'=>'')) !!}
+                </div>
 
 
             </td>
 
             <td>
-                <input type="submit" value="Add"/>
-            </td>
 
-        </form>
+                <div class="form-group">
+                    {!! Form::submit('Add a product') !!}
+                </div>
+
+            </td>
     </tr>
     </tbody>
 </table>
+
+{!! Form::close() !!}
 
 @include('layouts.errors')
 
