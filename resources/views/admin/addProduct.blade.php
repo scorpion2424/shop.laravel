@@ -40,7 +40,7 @@
             <td>
 
                 <div class="form-group">
-                    {!! Form::text('productDescription') !!}
+                    {!! Form::textarea('productDescription') !!}
                 </div>
 
 
