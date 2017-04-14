@@ -11,12 +11,15 @@
     <tbody>
         @foreach($products as $product)
             <tr>
-                <td>   <img src="img/{{$product->Image}}.jpg" /> </td>
+
+                <td>
+                    <img src="/storage/{{$product->Image}}" />
+                </td>
                 <td>   {{$product->Name}} </td>
                 <td>   {{$product->Description}} </td>
                 <td>   {{$product->Price}} </td>
                 <td>
-                    <button type="button" class="btn btn-info">Buy</button>
+                    <a href="/cart/{{$product->id}}">Buy</a>
                 </td>
             </tr>
         @endforeach

@@ -17,3 +17,4 @@ Route::post('/adminpage/addproduct','AdminController@insert')->name('addProduct'
 Route::get('/adminpage/{product}','AdminController@edit');
 Route::post('/adminpage/{product}','AdminController@update')->name('editProduct');
 Route::get('/adminpage/deleteproduct/{product}','AdminController@delete');
+Route::post('/adminpage/cart/{product}','User@addToCart');
