@@ -13,7 +13,7 @@
 Route::get('/', 'ProductsController@index');
 Route::get('/adminpage','AdminController@index');
 Route::get('/adminpage/addproduct','AdminController@add');
-Route::post('/adminpage/addproduct','AdminController@insert')->name('addProduct');
+Route::post('/adminpage/addproduct','AdminController@update')->name('addProduct');
 Route::get('/adminpage/{product}','AdminController@edit');
 Route::post('/adminpage/{product}','AdminController@update')->name('editProduct');
 Route::get('/adminpage/deleteproduct/{product}','AdminController@delete');

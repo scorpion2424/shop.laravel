@@ -13,7 +13,7 @@
             <tr>
 
                 <td>
-                    <img src="/storage/{{$product->Image}}" />
+                    <img src="/storage/img/{{$product->Image}}" />
                 </td>
                 <td>   {{$product->Name}} </td>
                 <td>   {{$product->Description}} </td>
