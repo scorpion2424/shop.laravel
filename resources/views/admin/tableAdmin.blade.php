@@ -12,10 +12,10 @@
     <tbody>
         @foreach($products as $product)
             <tr>
-                <td>    <img src="/storage/img/{{$product->Image}}" /> </td>
-                <td>   {{$product->Name}} </td>
-                <td>   {{$product->Description}} </td>
-                <td>   {{$product->Price}} </td>
+                <td>    <img src="/storage/img/{{$product->image}}" /> </td>
+                <td>   {{$product->name}} </td>
+                <td>   {{$product->description}} </td>
+                <td>   {{$product->price}} </td>
                 <td>
                     <a href="/adminpage/{{$product->id}}">Edit</a>
                 </td>

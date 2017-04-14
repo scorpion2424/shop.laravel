@@ -13,11 +13,11 @@
             <tr>
 
                 <td>
-                    <img src="/storage/img/{{$product->Image}}" />
+                    <img src="/storage/img/{{$product->image}}" />
                 </td>
-                <td>   {{$product->Name}} </td>
-                <td>   {{$product->Description}} </td>
-                <td>   {{$product->Price}} </td>
+                <td>   {{$product->name}} </td>
+                <td>   {{$product->description}} </td>
+                <td>   {{$product->price}} </td>
                 <td>
                     <a href="/cart/{{$product->id}}">Buy</a>
                 </td>
