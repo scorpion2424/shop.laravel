@@ -4,9 +4,10 @@
 
 {!! Form::open(
     array(
-        'route' => 'addProduct',
+       'route' => 'adminpage.store',
         'class' => 'form',
         'novalidate' => 'novalidate',
+        'method' => 'POST',
         'files' => true)) !!}
 
 <table class="table">

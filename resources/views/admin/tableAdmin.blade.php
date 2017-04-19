@@ -13,11 +13,11 @@
         @foreach($products as $product)
             <tr>
                 <td>    <img src="/storage/img/{{$product->image}}" /> </td>
-                <td>   {{$product->name}} </td>
+                <td>   <a href="/adminpage/{{$product->id}}">{{$product->name}}</a> </td>
                 <td>   {{$product->description}} </td>
                 <td>   {{$product->price}} </td>
                 <td>
-                    <a href="/adminpage/{{$product->id}}">Edit</a>
+                    <a href="/adminpage/{{$product->id}}/edit">Edit</a>
                 </td>
                 <td>
                     <a href="/adminpage/deleteproduct/{{$product->id}}">Delete</a>

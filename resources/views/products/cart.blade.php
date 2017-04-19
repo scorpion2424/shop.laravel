@@ -1,7 +1,4 @@
 @include('layouts.master')
 @include('layouts.nav')
-
-<a href="/cart">My cart</a>
-
-@include('layouts.table')
+@include('products.cartTable')
 @include('layouts.footer')
