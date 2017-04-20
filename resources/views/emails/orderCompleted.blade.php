@@ -29,7 +29,7 @@
         <tbody>
         <?php
             $productNumber = 0;
-            $totalPrice=0;
+            $totalPrice = 0;
         ?>
 
         @foreach($products as $product)
