@@ -20,8 +20,12 @@
                     <a href="/adminpage/{{$product->id}}/edit">Edit</a>
                 </td>
                 <td>
-                    <a href="/adminpage/deleteproduct/{{$product->id}}">Delete</a>
+                    {{ Form::open(['method' => 'POST', 'route' => ['adminpage.destroy', $product->id]]) }}
+                    {{ method_field('DELETE') }}
+                    {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+                    {{ Form::close() }}
                 </td>
+
             </tr>
         @endforeach
     </tbody>
