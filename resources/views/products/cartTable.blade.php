@@ -1,4 +1,7 @@
+
 @if(count($products) > 0)
+    {{$products}}
+
 <table class="table">
     <thead class="thead-default">
     <tr>
@@ -40,4 +43,6 @@
 
 <h2>Complete the following fields and you will receive your order:</h2>
 @include('products.userAddress')
+
+
 @endif

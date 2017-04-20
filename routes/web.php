@@ -10,25 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('adminpage', 'AdController');
-
-
-/*
-Route::get('/adminpage', 'AdminController@index');
-Route::get('/adminpage/addproduct', 'AdminController@add');
-Route::post('/adminpage/addproduct', 'AdminController@update')->name('addProduct');
-Route::get('/adminpage/{product}', 'AdminController@edit');
-Route::post('/adminpage/{product}', 'AdminController@update')->name('editProduct');
-Route::get('/adminpage/deleteproduct/{product}', 'AdminController@delete');
-*/
-
-
-
-
-
-
+Route::resource('adminpage', 'AdminController');
 Route::get('/', 'ProductsController@index');
 Route::get('/cart/{product}', 'ProductsController@addToCart');
 Route::get('/cart','ProductsController@showCart');
 Route::get('/deleteFromCart/{productNumber}', 'ProductsController@delete');
-Route::post('/finishorder', 'ProductsController@finishOrder')->name('finishOrder');
+Route::post('/finishorder', 'ProductsController@sendEmail')->name('sendEmail');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

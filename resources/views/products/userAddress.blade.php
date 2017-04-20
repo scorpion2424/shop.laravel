@@ -1,7 +1,7 @@
 
 {!! Form::open(
     array(
-        'route' => 'finishOrder',
+        'route' => 'sendEmail',
         'class' => 'form',
         'novalidate' => 'novalidate',
         'files' => true)) !!}
