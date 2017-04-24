@@ -19,20 +19,40 @@
 
         @foreach($products as $product)
 
-         <?php $showProduct = App\Product::find($product); ?>
+              @if(App\Product::find($product))
+                  <?php $showProduct = App\Product::find($product) ?>
 
-            <tr>
+                   <tr>
 
-                <td>
-                    <img src="/storage/img/{{ $showProduct->image}}" />
-                </td>
-                <td>   {{$showProduct->name}} </td>
-                <td>   {{$showProduct->description}} </td>
-                <td>   {{$showProduct->price}} </td>
-                <td>
-                    <a href="/deleteFromCart/{{$productNumber}}">Delete</a>
-                </td>
-            </tr>
+                       <td>
+                           <img src="/storage/img/@if($showProduct){{$showProduct->image}}@endif"/>
+                            </td>
+
+                            <td>
+                                @if($showProduct)
+                                    {{$showProduct->name}}
+                                @endif
+                            </td>
+
+                            <td>
+                                @if($showProduct)
+                                    {{$showProduct->description}}
+                                @endif
+                            </td>
+
+                            <td>
+                                @if($showProduct)
+                                    {{$showProduct->price}}
+                                @endif
+                            </td>
+
+                            <td>
+                                <a href="/deleteFromCart/{{$productNumber}}">Delete</a>
+                            </td>
+
+                        </tr>
+
+              @endif
 
             <?php $productNumber++; ?>
 
