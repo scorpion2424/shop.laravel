@@ -19,14 +19,16 @@
 
         @foreach($products as $product)
 
+         <?php $showProduct = App\Product::find($product); ?>
+
             <tr>
 
                 <td>
-                    <img src="/storage/img/{{ App\Product::find($product)->image}}" />
+                    <img src="/storage/img/{{ $showProduct->image}}" />
                 </td>
-                <td>   {{App\Product::find($product)->name}} </td>
-                <td>   {{App\Product::find($product)->description}} </td>
-                <td>   {{App\Product::find($product)->price}} </td>
+                <td>   {{$showProduct->name}} </td>
+                <td>   {{$showProduct->description}} </td>
+                <td>   {{$showProduct->price}} </td>
                 <td>
                     <a href="/deleteFromCart/{{$productNumber}}">Delete</a>
                 </td>
