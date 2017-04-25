@@ -1,5 +1,6 @@
 @include('layouts.master')
 @include('layouts.nav')
+
 @if(count($products) > 0)
 
     <table class="table">
@@ -24,33 +25,27 @@
 
                    <tr>
 
-                       <td>
-                           <img src="/storage/img/@if($showProduct){{$showProduct->image}}@endif"/>
+                            <td>
+                                    <img src="/storage/img/{{$showProduct->image}}"/>
                             </td>
 
                             <td>
-                                @if($showProduct)
                                     {{$showProduct->name}}
-                                @endif
                             </td>
 
                             <td>
-                                @if($showProduct)
                                     {{$showProduct->description}}
-                                @endif
                             </td>
 
                             <td>
-                                @if($showProduct)
                                     {{$showProduct->price}}
-                                @endif
                             </td>
 
                             <td>
-                                <a href="/deleteFromCart/{{$productNumber}}">Delete</a>
+                                     <a href="/deleteFromCart/{{$productNumber}}">Delete</a>
                             </td>
 
-                        </tr>
+                    </tr>
 
               @endif
 
