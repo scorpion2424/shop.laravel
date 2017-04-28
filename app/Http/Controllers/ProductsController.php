@@ -27,9 +27,13 @@ class ProductsController extends Controller
     {
         $productIds = $request->session()->get('userCommand');
 
-        $products = Product::find(array_keys($productIds));
-
-        $quantities = $request->session()->get('userCommand');
+        if(count($productIds)>0){
+            $products = Product::find(array_keys($productIds));
+            $quantities = $request->session()->get('userCommand');
+        }elseif (count($productIds)<=0){
+            $products=array();
+            $quantities=array();
+        }
 
         return view('products.cart', compact('products','quantities'));
     }
