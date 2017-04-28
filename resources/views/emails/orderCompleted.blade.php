@@ -16,36 +16,33 @@
         }
     </style>
 
-<p>Hello mr./mrs </b>{{$firstName}} {{$secondName}}</b>,</p>
+    <p>Hello mr./mrs </b>{{$firstName}} {{$secondName}}</b>,</p>
+
     <br>
     <table>
         <thead>
         <tr>
             <th>Name</th>
             <th>Description</th>
+            <th>Quantity</th>
             <th>Price</th>
         </tr>
         </thead>
         <tbody>
-        <?php
-            $productNumber = 0;
-            $totalPrice = 0;
-        ?>
+        <?php $totalPrice=0; ?>
 
-        @foreach($products as $product)
-
+        @foreach($products as $i => $product)
             <tr>
 
-                <td>   {{App\Product::find($product)->name}} </td>
-                <td>   {{App\Product::find($product)->description}} </td>
-                <td>   {{App\Product::find($product)->price}} </td>
+                <td>{{$product->name}}</td>
+
+                <td>{{$product->description}}</td>
+
+                <td>{{$quantities[$product->id]}}</td>
+
+                <td>{{$quantities[$product->id] * $product->price}}</td>
+                <?php $totalPrice+=$quantities[$product->id] * $product->price; ?>
             </tr>
-
-            <?php
-                $productNumber++;
-                $totalPrice+=App\Product::find($product)->price;
-            ?>
-
         @endforeach
 
         </tbody>

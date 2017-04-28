@@ -9,6 +9,7 @@
                 <th>Image</th>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Quantity</th>
                 <th>Price</th>
                 <th>Delete</th>
             </tr>
@@ -23,8 +24,13 @@
                 </td>
 
                 <td>{{$product->name}}</td>
+
                 <td>{{$product->description}}</td>
-                <td>{{$product->price}}</td>
+
+               <td>{{$quantities[$product->id]}}</td>
+
+                <td>{{$quantities[$product->id] * $product->price}}</td>
+
                 <td>
                     <a href="/deleteFromCart/{{$product->id}}">Delete</a>
                 </td>

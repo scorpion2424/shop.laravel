@@ -19,14 +19,7 @@ class ProductsController extends Controller
     public function addToCart(Request $request, $productId)
     {
          // $request->session()->flush();
-        // dd($request->session()->getId());
-        // $request->session()->__construct("products");
-        // dd($request->session()->getName());
-
-    //  dd($request->session()->get("cart.$productId")+1);
-       // $request->session()->push("cart.$productId", 455);
         $request->session()->increment("userCommand.$productId");
-//        dd($request->session()->get("cart"));
         return redirect('/cart');
     }
 
@@ -36,7 +29,9 @@ class ProductsController extends Controller
 
         $products = Product::find(array_keys($productIds));
 
-        return view('products.cart', compact('products'));
+        $quantities = $request->session()->get('userCommand');
+
+        return view('products.cart', compact('products','quantities'));
     }
 
     public function delete(Request $request, $productId)
