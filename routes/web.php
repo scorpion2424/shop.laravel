@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('adminpage', 'AdminController');
+Route::resource('adminpage','AdminController', [ 'middleware' => 'auth']);
+
 Route::get('/', 'ProductsController@index');
 Route::get('/cart/{product}', 'ProductsController@addToCart');
 Route::get('/cart','ProductsController@showCart');

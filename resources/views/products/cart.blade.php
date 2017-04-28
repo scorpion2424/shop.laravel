@@ -5,54 +5,32 @@
 
     <table class="table">
         <thead class="thead-default">
-        <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Delete</th>
-        </tr>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Delete</th>
+            </tr>
         </thead>
         <tbody>
-        <?php
-        $productNumber = 0;
-        ?>
 
-        @foreach($products as $product)
+        @foreach($products as $i => $product)
+           <tr>
 
-              @if(App\Product::find($product))
-                  <?php $showProduct = App\Product::find($product) ?>
+                <td>
+                        <img src="/storage/img/{{$product->image}}"/>
+                </td>
 
-                   <tr>
+                <td>{{$product->name}}</td>
+                <td>{{$product->description}}</td>
+                <td>{{$product->price}}</td>
+                <td>
+                    <a href="/deleteFromCart/{{$product->id}}">Delete</a>
+                </td>
 
-                            <td>
-                                    <img src="/storage/img/{{$showProduct->image}}"/>
-                            </td>
-
-                            <td>
-                                    {{$showProduct->name}}
-                            </td>
-
-                            <td>
-                                    {{$showProduct->description}}
-                            </td>
-
-                            <td>
-                                    {{$showProduct->price}}
-                            </td>
-
-                            <td>
-                                     <a href="/deleteFromCart/{{$productNumber}}">Delete</a>
-                            </td>
-
-                    </tr>
-
-              @endif
-
-            <?php $productNumber++; ?>
-
+           </tr>
         @endforeach
-
 
         </tbody>
 
